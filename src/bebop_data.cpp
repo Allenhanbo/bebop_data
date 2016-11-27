@@ -117,7 +117,7 @@ void tfCallback( const tf2_msgs::TFMessageConstPtr& tf_msg ) {
 
   bebop_data::tf_stamped tf_msg_stamped;
 
-  tf_msg_stamped.header.stamp = tf_msg->transforms[0].header.stamp; // ros::Time::now();
+  tf_msg_stamped.header.stamp = ros::Time::now(); // tf_msg->transforms[0].header.stamp;
 
   if(tf_msg->transforms[0].child_frame_id.compare("ORB_SLAM/Camera") == 0) {
     tf_msg_stamped.header.frame_id = "camera_frame";
